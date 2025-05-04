@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1 - Event Propagation Exploration</title>
+</head>
+<body>
+    <center><h1>L1 - Event Propagation Exploration</h1></center>
+
+        
+        <div id="first">First DIV
+            <button id="first-btn">First Button</button>
+        
+          <div id="second">Second DIV
+            <button id="second-btn">Second Button</button>
+
+              <div id="third">Third DIV
+                <button id="third-btn">Third Button</button>
+              </div>
+          </div>
+        </div>
+
+<script>
+    document.getElementById('first').addEventListener('click', () => {
+        alert('First Div clicked')
+    });
+
+    document.getElementById('second').addEventListener('click', () => {
+        alert('Second Div clicked')
+    });
+
+    document.getElementById('third').addEventListener('click', () => {
+        alert('Third Div clicked')
+    });
+
+    document.getElementById('first-btn').addEventListener('click', () => {
+        alert('First button clicked')
+    });
+
+    document.getElementById('second-btn').addEventListener('click', () => {
+        alert('Second button clicked')
+    });
+
+    document.getElementById('third-btn').addEventListener('click', () => {
+        alert('Third button clicked')
+    })
+
+    document.getElementById('second-btn').addEventListener('click', (event) => {
+        alert('second button clicked');
+        event.stopPropagation();
+    });
+</script>
+
+
+</body>
+</html>
