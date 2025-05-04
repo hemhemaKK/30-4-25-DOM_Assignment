@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L0 - Understanding and Navigating the DOM</title>
+    <style>
+        /*  */
+    </style>
+</head>
+<body>
+    <div class="container">
+      Hi  
+    </div>
+    <h1 id="head"></h1>
+    <p>Creating a paragraph</p>
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+</body>
+</html>
+
+<!-------JAVASCRIPT-------->
+
+<script>
+    const containerDiv = document.querySelector('.container');
+    containerDiv.style.backgroundColor = 'yellow';
+
+    let heading = document.getElementById('head')
+    heading.textContent = 'Welcome To the DOM World!.'
+
+    const paragraphs = document.getElementsByTagName('p');
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.color = 'blue';
+    }
+
+
+</script>

@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L0 - Understanding and Navigating the DOM</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+     <center><h1>L0 - Understanding and Navigating the DOM</h1></center>
+    
+          
+     
+     <label>Enter Task:</label>
+     <input type="text" id="textinput" placeholder="Enter the text">
+    
+     <button id="add-button">Add Task</button>
+      <ul id="item-list"> </ul>
+
+      <!-------JAVASCRIPT-------->
+
+<script>
+    const ul = document.querySelector('#item-list')
+    const button = document.getElementById('add-button')
+    const input = document.getElementById('textinput')
+
+    button.addEventListener('click', ()=>{
+        const newTask = input.value;
+
+        if(newTask === '')
+         alert("please enter some text")
+
+        const li = document.createElement('li');
+        const task = document.createElement('span');
+        task.textContent = newTask;
+
+
+        const deleted = document.createElement('button');
+        deleted.textContent = 'Delete'
+        deleted.className = 'task-button'
+        deleted.addEventListener('click', () => {
+            ul.removeChild(li)
+        });
+         li.appendChild(task)
+         li.appendChild(deleted)
+
+         ul.appendChild(li);
+         
+         input.value = ''
+    
+    });
+
+</script>
+    
+</body>
+</html>
+
